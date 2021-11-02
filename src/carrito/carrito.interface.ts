@@ -1,8 +1,8 @@
-import { Productos } from './../productos/productos.interface';
+import { Producto } from './../productos/producto.interface';
 
 export interface BaseCarrito {
     timestamp: Date;
-    productos: Productos[]    
+    productos: Producto[]    
   }
   
   export interface Carrito extends BaseCarrito {

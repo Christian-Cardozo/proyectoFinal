@@ -1,5 +1,6 @@
 import express, { Application, Request, Response } from "express";
 import { productosRouter } from './productos/productos.router';
+import { carritoRouter } from './carrito/carrito.router';
 
 const app: Application = express();
 const port = 3000;
@@ -8,6 +9,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.use("/api/productos", productosRouter);
+app.use("/api/carrito", carritoRouter);
 
 app.get(
     "/",
@@ -20,8 +22,8 @@ app.get(
 
 try {
     app.listen(port, (): void => {
-        console.log(`Connected successfully on port ${port}`);
+        console.log(`Conectado al puerto ${port}`);
     });
 } catch (error: any) {
-    console.error(`Error occured: ${error.message}`);
+    console.error(`Error: ${error.message}`);
 }
