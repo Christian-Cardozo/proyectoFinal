@@ -80,7 +80,7 @@ carritoRouter.delete("/:id/productos/:id_prod", async (req: Request, res: Respon
     const idRemoved = await CarritoService.removeProductById(id, id_prod);
 
     if(idRemoved == null){
-      return res.status(404).send(`Carrito no encontrados`);
+      return res.status(404).send(`Carrito no encontrado`);
     }
     
     res.status(202).send(`Producto con id: ${idRemoved} eliminado correctamente`);
